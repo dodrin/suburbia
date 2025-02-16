@@ -5,7 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
-  | TeanGridSlice
+  | TeamGridSlice
   | VideoBlockSlice
   | TextAndImageSlice
   | ProductGridSlice
@@ -456,16 +456,16 @@ export type ProductGridSlice = prismic.SharedSlice<
 /**
  * Primary content in *TeamGrid → Default → Primary*
  */
-export interface TeanGridSliceDefaultPrimary {
+export interface TeamGridSliceDefaultPrimary {
   /**
    * Heading field in *TeamGrid → Default → Primary*
    *
-   * - **Field Type**: Title
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: tean_grid.default.primary.heading
+   * - **API ID Path**: team_grid.default.primary.heading
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  heading: prismic.TitleField;
+  heading: prismic.RichTextField;
 }
 
 /**
@@ -475,27 +475,27 @@ export interface TeanGridSliceDefaultPrimary {
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type TeanGridSliceDefault = prismic.SharedSliceVariation<
+export type TeamGridSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Simplify<TeanGridSliceDefaultPrimary>,
+  Simplify<TeamGridSliceDefaultPrimary>,
   never
 >;
 
 /**
  * Slice variation for *TeamGrid*
  */
-type TeanGridSliceVariation = TeanGridSliceDefault;
+type TeamGridSliceVariation = TeamGridSliceDefault;
 
 /**
  * TeamGrid Shared Slice
  *
- * - **API ID**: `tean_grid`
- * - **Description**: TeanGrid
+ * - **API ID**: `team_grid`
+ * - **Description**: TeamGrid
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type TeanGridSlice = prismic.SharedSlice<
-  "tean_grid",
-  TeanGridSliceVariation
+export type TeamGridSlice = prismic.SharedSlice<
+  "team_grid",
+  TeamGridSliceVariation
 >;
 
 /**
@@ -759,10 +759,10 @@ declare module "@prismicio/client" {
       ProductGridSliceDefaultPrimary,
       ProductGridSliceVariation,
       ProductGridSliceDefault,
-      TeanGridSlice,
-      TeanGridSliceDefaultPrimary,
-      TeanGridSliceVariation,
-      TeanGridSliceDefault,
+      TeamGridSlice,
+      TeamGridSliceDefaultPrimary,
+      TeamGridSliceVariation,
+      TeamGridSliceDefault,
       TextAndImageSlice,
       TextAndImageSliceDefaultPrimary,
       TextAndImageSliceImageOnLeftPrimary,

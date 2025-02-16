@@ -1,8 +1,8 @@
 {
-  "id": "tean_grid",
+  "id": "team_grid",
   "type": "SharedSlice",
   "name": "TeamGrid",
-  "description": "TeanGrid",
+  "description": "TeamGrid",
   "variations": [
     {
       "id": "default",
@@ -18,7 +18,7 @@
             "label": "Heading",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "heading2"
+            "multi": "heading2"
           }
         }
       },
