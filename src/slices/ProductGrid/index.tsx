@@ -8,6 +8,7 @@ import {
 import { Bounded } from "@/components/Bounded";
 import { Heading } from "@/components/Heading";
 import { SkateboardProduct } from "./SkateboardProduct";
+import { SlideIn } from "@/components/SlideIn";
 
 /**
  * Props for `ProductGrid`.
@@ -24,13 +25,16 @@ const ProductGrid: FC<ProductGridProps> = ({ slice }) => {
       data-slice-variation={slice.variation}
       className="bg-texture bg-brand-gray"
     >
-      <Heading className="text-center ~mb-4/6" as="h2">
-        <PrismicText field={slice.primary.heading} />
-      </Heading>
-      <div className="text-center ~mb-6/10">
-        <PrismicRichText field={slice.primary.body} />
-      </div>
-
+      <SlideIn>
+        <Heading className="text-center ~mb-4/6" as="h2">
+          <PrismicText field={slice.primary.heading} />
+        </Heading>
+      </SlideIn>
+      <SlideIn>
+        <div className="text-center ~mb-6/10">
+          <PrismicRichText field={slice.primary.body} />
+        </div>
+      </SlideIn>
       <div className="grid w-full grid-cols-1 gap-4 md:grid-ciks-2 lg:grid-cols-4">
         {slice.primary.product.map(
           ({ skateboard }) =>
